@@ -4,7 +4,7 @@ export async function GET() {
   const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "NOT SET";
   const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN ? "SET ✓" : "NOT SET ✗";
 
-  const results: Record<string, unknown> = {
+  const results: { config: Record<string, string>; tests: Record<string, unknown> } = {
     config: {
       NEXT_PUBLIC_STRAPI_URL: STRAPI_URL,
       STRAPI_API_TOKEN: STRAPI_TOKEN,
