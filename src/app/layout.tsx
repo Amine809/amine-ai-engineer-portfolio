@@ -10,7 +10,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Resume",
+  title: "Mohamed Amine Karmous Portfolio",
   description: "Created by Mohamed Amine Karmous",
   icons: [
     { rel: "icon", url: "/favicon.svg", type: "image/svg+xml" },
