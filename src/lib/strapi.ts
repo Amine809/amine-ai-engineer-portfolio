@@ -7,7 +7,7 @@ async function strapiGet(path: string) {
 
   const res = await fetch(`${STRAPI_URL}/api${path}`, {
     headers,
-    next: { revalidate: 60 },
+    cache: 'no-store',
   });
 
   if (!res.ok) return null;
