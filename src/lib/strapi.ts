@@ -84,6 +84,16 @@ export interface Work {
   order: number;
 }
 
+export interface Certificate {
+  id: number;
+  title: string;
+  issuer: string;
+  date: string;
+  credentialUrl: string;
+  image: { url: string } | null;
+  order: number;
+}
+
 export async function getAbout(): Promise<AboutData | null> {
   const data = await strapiGet('/about?populate=*');
   return data?.data ?? null;
@@ -111,5 +121,10 @@ export async function getSkills(): Promise<Skill[]> {
 
 export async function getWorks(): Promise<Work[]> {
   const data = await strapiGet('/works?sort=order:asc&populate=*&pagination[pageSize]=20');
+  return data?.data ?? [];
+}
+
+export async function getCertificates(): Promise<Certificate[]> {
+  const data = await strapiGet('/certificates?sort=order:asc&populate=*&pagination[pageSize]=50');
   return data?.data ?? [];
 }
