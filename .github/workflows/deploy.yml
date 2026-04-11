@@ -29,17 +29,11 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        with:
-          enablement: true
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build with Next.js
-        env:
-          NEXT_PUBLIC_STRAPI_URL: ${{ secrets.NEXT_PUBLIC_STRAPI_URL }}
-          STRAPI_API_TOKEN: ${{ secrets.STRAPI_API_TOKEN }}
-          NEXT_PUBLIC_BASE_PATH: /amine-ai-engineer-portfolio
         run: npm run build
 
       - name: Upload artifact
