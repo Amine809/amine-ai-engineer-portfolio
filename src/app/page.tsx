@@ -1,4 +1,5 @@
 import AboutMe from "./components/home/about-me";
+import Certificates from "./components/home/certificates";
 import Contact from "./components/home/contact";
 import EducationSkills from "./components/home/education-skills";
 import ExperienceSec from "./components/home/experience-sec";
@@ -12,10 +13,11 @@ import {
   getEducations,
   getSkills,
   getWorks,
+  getCertificates,
 } from "@/lib/strapi";
 
 export default async function Page() {
-  const [about, contact, experiences, educations, skills, works] =
+  const [about, contact, experiences, educations, skills, works, certificates] =
     await Promise.all([
       getAbout(),
       getContact(),
@@ -23,6 +25,7 @@ export default async function Page() {
       getEducations(),
       getSkills(),
       getWorks(),
+      getCertificates(),
     ]);
 
   return (
@@ -34,6 +37,7 @@ export default async function Page() {
         <ExperienceSec experiences={experiences} />
         <EducationSkills educations={educations} skills={skills} />
         <LatestWork works={works} />
+        <Certificates certificates={certificates} />
         <Contact contact={contact} />
       </main>
     </>
