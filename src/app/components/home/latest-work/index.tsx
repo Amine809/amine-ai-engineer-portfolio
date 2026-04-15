@@ -6,10 +6,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaPlay, FaTimes, FaExternalLinkAlt } from "react-icons/fa";
 
-interface Props {
-  works: Work[];
-}
-
 function getEmbedUrl(url: string): string {
   // YouTube: youtu.be/ID or youtube.com/watch?v=ID
   const ytMatch = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([A-Za-z0-9_-]{11})/);
