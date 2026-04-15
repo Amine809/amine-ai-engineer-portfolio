@@ -113,11 +113,6 @@ const LatestWork = ({ works }: Props) => {
                       </div>
                       {work.client && <p className="text-secondary">Client: {work.client}</p>}
 
-                      {/* Description */}
-                      {work.description && (
-                        <p className="text-sm text-secondary leading-relaxed">{work.description}</p>
-                      )}
-
                       {/* Technologies */}
                       {work.technologies && (
                         <div className="flex flex-wrap gap-2 pt-1">
