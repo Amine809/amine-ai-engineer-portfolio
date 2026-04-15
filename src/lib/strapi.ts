@@ -76,7 +76,6 @@ export interface Work {
   id: number;
   title: string;
   client: string;
-  description: string;
   image: { url: string } | null;
   slug: string;
   link: string;

@@ -113,25 +113,6 @@ const LatestWork = ({ works }: Props) => {
                       </div>
                       {work.client && <p className="text-secondary">Client: {work.client}</p>}
 
-                      {/* Description */}
-                      {work.description && (
-                        <p className="text-sm text-secondary leading-relaxed">{work.description}</p>
-                      )}
-
-                      {/* Technologies */}
-                      {work.technologies && (
-                        <div className="flex flex-wrap gap-2 pt-1">
-                          {work.technologies.split(",").map((tech) => (
-                            <span
-                              key={tech.trim()}
-                              className="text-xs font-medium bg-primary/10 text-primary border border-primary/20 px-3 py-1 rounded-full"
-                            >
-                              {tech.trim()}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-
                       {/* Action buttons */}
                       {(hasVideo || hasLink) && (
                         <div className="flex items-center gap-3 pt-1">
